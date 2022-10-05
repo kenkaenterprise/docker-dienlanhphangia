@@ -1,0 +1,5 @@
+MYSQL_HOST=db
+MYSQL_ROOT_PASSWORD=12345
+MYSQL_DATABASE=thicongmaylanhtrungtam
+MYSQL_USER=thicongmaylanhtrungtam
+MYSQL_PASSWORD=thicongmaylanhtrungtam

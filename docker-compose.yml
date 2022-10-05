@@ -1,0 +1,25 @@
+version: "3"
+services:
+  web:
+    build: .docker/web
+    ports:
+      - "80:80"
+    links:
+      - db
+    volumes: &appvolumes
+      - ~/.composer:/var/www/.composer:cached
+      - appdata:/var/www/html
+      - ./source/thicongmaylanhtrungtam:/var/www/html/web
+  db:
+    image: percona:5.7
+    command: --max_allowed_packet=64M
+    ports:
+      - "33061:3306"
+    env_file: ./env
+    volumes:
+      - dbdata:/var/lib/mysql
+volumes:
+  appdata:
+  dbdata:
+
+
